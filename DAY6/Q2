@@ -1,0 +1,21 @@
+BinaryToDecimal
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    long long binary;
+    cin >> binary;
+
+    int decimal = 0, base = 0;
+
+    while (binary > 0) {
+        int last = binary % 10;
+        decimal += last * pow(2, base);
+        base++;
+        binary /= 10;
+    }
+
+    cout << decimal;
+    return 0;
+}
